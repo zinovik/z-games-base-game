@@ -19,7 +19,7 @@ export class BaseGame {
 
   public startGame: (gameData: string) => { gameData: string, nextPlayersIds: string[] };
 
-  public getRules: () => string;
+  public getRules: () => string[];
 
   public parseGameDataForUser: (parameters: { gameData: string, userId: string }) => string;
 
