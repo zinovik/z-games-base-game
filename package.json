@@ -1,0 +1,23 @@
+{
+  "name": "z-games-base-game",
+  "version": "0.0.1",
+  "description": "Game template module for tiny board games portal",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zinovik/z-games-base-game.git"
+  },
+  "author": "Max Zinovik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zinovik/z-games-base-game/issues"
+  },
+  "homepage": "https://github.com/zinovik/z-games-base-game#readme",
+  "devDependencies": {
+    "typescript": "^3.2.2"
+  }
+}
