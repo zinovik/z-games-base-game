@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const routing_controllers_1 = require("routing-controllers");
 class BaseGame {
     constructor() {
         this.toggleReady = ({ gameData: gameDataJSON, userId }) => {
@@ -37,9 +36,3 @@ class BaseGame {
     }
 }
 exports.BaseGame = BaseGame;
-class MakingMoveError extends routing_controllers_1.BadRequestError {
-    constructor(message) {
-        super(`Error making a move: ${message}`);
-    }
-}
-exports.MakingMoveError = MakingMoveError;

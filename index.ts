@@ -1,5 +1,3 @@
-import { BadRequestError } from 'routing-controllers';
-
 export interface BaseGameData {
   players: BaseGamePlayer[];
 }
@@ -70,10 +68,4 @@ export class BaseGame {
     return JSON.stringify({ ...gameData, players });
   }
 
-}
-
-export class MakingMoveError extends BadRequestError {
-  constructor(message: string) {
-    super(`Error making a move: ${message}`);
-  }
 }
