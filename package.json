@@ -1,6 +1,6 @@
 {
   "name": "z-games-base-game",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Game template module for tiny board games portal",
   "main": "dist/index.js",
   "scripts": {
