@@ -1,6 +1,6 @@
 {
   "name": "z-games-base-game",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Game template module for tiny board games portal",
   "main": "dist/index.js",
   "scripts": {
@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/zinovik/z-games-base-game#readme",
   "devDependencies": {
-    "typescript": "^3.2.2"
+    "typescript": "^3.3.3"
   }
 }
