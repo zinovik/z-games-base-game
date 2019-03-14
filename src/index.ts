@@ -40,16 +40,16 @@ export class BaseGame {
 
   public toggleReady = ({ gameData: gameDataJSON, userId }: { gameData: string, userId: string }): string => {
     const gameData: BaseGameData = JSON.parse(gameDataJSON);
-    let { players } = gameData;
+    const { players } = gameData;
 
-    players = players.map(player => {
+    const newPlayers = players.map(player => {
       if (player.id === userId) {
         return { ...player, ready: !player.ready };
       }
       return player;
     });
 
-    return JSON.stringify({ ...gameData, players });
+    return JSON.stringify({ ...gameData, players: newPlayers });
   }
 
   public checkReady = (gameDataJSON: string): boolean => {
@@ -61,11 +61,11 @@ export class BaseGame {
 
   public removePlayer = ({ gameData: gameDataJSON, userId }: { gameData: string, userId: string }): string => {
     const gameData: BaseGameData = JSON.parse(gameDataJSON);
-    let { players } = gameData;
+    const { players } = gameData;
 
-    players = players.filter(player => player.id !== userId);
+    const newPlayers = players.filter(player => player.id !== userId);
 
-    return JSON.stringify({ ...gameData, players });
+    return JSON.stringify({ ...gameData, players: newPlayers });
   }
 
 }

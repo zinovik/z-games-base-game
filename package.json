@@ -1,6 +1,6 @@
 {
   "name": "z-games-base-game",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Game template module for tiny board games portal",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,13 +24,15 @@
   },
   "homepage": "https://github.com/zinovik/z-games-base-game#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.9",
-    "jest": "^24.1.0",
+    "@types/jest": "^24.0.11",
+    "jest": "^24.5.0",
     "prettier": "^1.16.4",
     "ts-jest": "^24.0.0",
-    "tslint": "^5.13.1",
+    "tslint": "^5.14.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.3333"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ]
 }
