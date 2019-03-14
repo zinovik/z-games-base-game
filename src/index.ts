@@ -11,6 +11,10 @@ export interface BaseGamePlayer {
 export interface BaseGameMove {
 }
 
+export const GAME_NOT_STARTED = 0;
+export const GAME_STARTED = 1;
+export const GAME_FINISHED = 2;
+
 export class BaseGame {
 
   public getNewGame: () => { playersMax: number, playersMin: number, gameData: string };
