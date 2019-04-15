@@ -24,6 +24,8 @@ export class BaseGame {
     nextPlayersIds: string[],
   };
 
+  public getOptionsVariants: () => Array<{ name: string, values: string[] }>;
+
   public addPlayer({ gameData: gameDataJSON, userId }: { gameData: string, userId: string }): string {
     const gameData: IBaseGameData = JSON.parse(gameDataJSON);
     const { players } = gameData;
@@ -65,6 +67,16 @@ export class BaseGame {
     const newPlayers = players.filter(player => player.id !== userId);
 
     return JSON.stringify({ ...gameData, players: newPlayers });
+  }
+
+  public updateOption = ({ gameData: gameDataJSON, name, value }: { gameData: string, name: string, value: string }): string => {
+    const gameData: IBaseGameData = JSON.parse(gameDataJSON);
+
+    const { options } = gameData;
+
+    const newOptions = options.map(option => option.name === name ? { name, value } : option);
+
+    return JSON.stringify({ ...gameData, options: newOptions });
   }
 
 }
