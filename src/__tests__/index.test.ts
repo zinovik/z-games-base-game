@@ -84,3 +84,9 @@ test('change an option', () => {
   expect(newOptions[0].name).toBe('option1');
   expect(newOptions[0].value).toBe('value2');
 });
+
+test('check time variants', () => {
+  const timeVariants = BaseGame.getMaxTimeVariants();
+
+  expect(timeVariants['1 hour']).toBe(1000 * 60 * 60);
+});
