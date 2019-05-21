@@ -24,9 +24,14 @@ export class BaseGame {
     nextPlayersIds: string[],
   };
 
-  public getOptionsVariants: () => Array<{ name: string, values: string[] }>;
+  public getOptionsVariants = (): Array<{ name: string, values: string[] }> => {
+    return [{
+      name: 'Max Time',
+      values: Object.keys(BaseGame.getMaxTimeVariants()),
+    }];
+  }
 
-  public addPlayer({ gameData: gameDataJSON, userId }: { gameData: string, userId: string }): string {
+  public addPlayer = ({ gameData: gameDataJSON, userId }: { gameData: string, userId: string }): string => {
     const gameData: IBaseGameData = JSON.parse(gameDataJSON);
     const { players } = gameData;
 
@@ -77,6 +82,16 @@ export class BaseGame {
     const newOptions = options.map(option => option.name === name ? { name, value } : option);
 
     return JSON.stringify({ ...gameData, options: newOptions });
+  }
+
+  public static getMaxTimeVariants = () => {
+    return {
+      '1 minute': 1000 * 60,
+      '10 minutes': 1000 * 60 * 10,
+      '1 hour': 1000 * 60 * 60,
+      '24 hours': 1000 * 60 * 60 * 24,
+      '7 days': 1000 * 60 * 60 * 24 * 7,
+    };
   }
 
 }
