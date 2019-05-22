@@ -24,7 +24,7 @@ export class BaseGame {
     nextPlayersIds: string[],
   };
 
-  public getOptionsVariants = (): Array<{ name: string, values: string[] }> => {
+  public getOptionsVariants(): Array<{ name: string, values: string[] }> {
     return [{
       name: 'Max Time',
       values: Object.keys(BaseGame.getMaxTimeVariants()),
