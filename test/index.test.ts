@@ -1,4 +1,4 @@
-import { BaseGame, IBaseGameData, IBaseGamePlayer } from '../';
+import { BaseGame, IBaseGameData, IBaseGamePlayer } from '../src';
 
 test('create new game instance', () => {
   const baseGame = new BaseGame();
@@ -10,7 +10,7 @@ test('add a new player', () => {
   const baseGame = new BaseGame();
 
   const players: IBaseGamePlayer[] = [];
-  const options: Array<{ name: string, value: string }> = [];
+  const options: Array<{ name: string; value: string }> = [];
   const gameData: IBaseGameData = { players, options };
 
   const newGameDataJSON = baseGame.addPlayer({ gameData: JSON.stringify(gameData), userId: 'testId' });
@@ -22,11 +22,11 @@ test('add a new player', () => {
   expect(newPlayers[0].ready).toBe(false);
 });
 
-test('toggle player\'s ready', () => {
+test("toggle player's ready", () => {
   const baseGame = new BaseGame();
 
   const players: IBaseGamePlayer[] = [];
-  const options: Array<{ name: string, value: string }> = [];
+  const options: Array<{ name: string; value: string }> = [];
   const gameData: IBaseGameData = { players, options };
 
   let newGameDataJSON = baseGame.addPlayer({ gameData: JSON.stringify(gameData), userId: 'testId' });
@@ -41,7 +41,7 @@ test('check every player is ready', () => {
   const baseGame = new BaseGame();
 
   const players: IBaseGamePlayer[] = [];
-  const options: Array<{ name: string, value: string }> = [];
+  const options: Array<{ name: string; value: string }> = [];
   const gameData: IBaseGameData = { players, options };
 
   let newGameDataJSON = baseGame.addPlayer({ gameData: JSON.stringify(gameData), userId: 'testId' });
@@ -59,7 +59,7 @@ test('remove a player', () => {
   const baseGame = new BaseGame();
 
   const players: IBaseGamePlayer[] = [];
-  const options: Array<{ name: string, value: string }> = [];
+  const options: Array<{ name: string; value: string }> = [];
   const gameData: IBaseGameData = { players, options };
 
   let newGameDataJSON = baseGame.addPlayer({ gameData: JSON.stringify(gameData), userId: 'testId' });
@@ -74,7 +74,7 @@ test('change an option', () => {
   const baseGame = new BaseGame();
 
   const players: IBaseGamePlayer[] = [];
-  const options: Array<{ name: string, value: string }> = [{ name: 'option1', value: 'value1' }];
+  const options: Array<{ name: string; value: string }> = [{ name: 'option1', value: 'value1' }];
   const gameData: IBaseGameData = { players, options };
 
   const newGameDataJSON = baseGame.updateOption({ gameData: JSON.stringify(gameData), name: 'option1', value: 'value2' });
