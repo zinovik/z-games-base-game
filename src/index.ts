@@ -42,7 +42,6 @@ export class BaseGame {
 
     players.push({
       id: userId,
-      ready: false,
     } as IBaseGamePlayer);
 
     return JSON.stringify({ ...gameData, players });

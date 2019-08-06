@@ -19,7 +19,6 @@ test('add a new player', () => {
 
   expect(newPlayers.length).toBe(1);
   expect(newPlayers[0].id).toBe('testId');
-  expect(newPlayers[0].ready).toBe(false);
 });
 
 test('remove a player', () => {
