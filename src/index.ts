@@ -48,27 +48,6 @@ export class BaseGame {
     return JSON.stringify({ ...gameData, players });
   };
 
-  public toggleReady = ({ gameData: gameDataJSON, userId }: { gameData: string; userId: string }): string => {
-    const gameData: IBaseGameData = JSON.parse(gameDataJSON);
-    const { players } = gameData;
-
-    const newPlayers = players.map(player => {
-      if (player.id === userId) {
-        return { ...player, ready: !player.ready };
-      }
-      return player;
-    });
-
-    return JSON.stringify({ ...gameData, players: newPlayers });
-  };
-
-  public checkReady = (gameDataJSON: string): boolean => {
-    const gameData: IBaseGameData = JSON.parse(gameDataJSON);
-    const { players } = gameData;
-
-    return players.every(player => player.ready);
-  };
-
   public removePlayer = ({ gameData: gameDataJSON, userId }: { gameData: string; userId: string }): string => {
     const gameData: IBaseGameData = JSON.parse(gameDataJSON);
 
@@ -79,7 +58,15 @@ export class BaseGame {
     return JSON.stringify({ ...gameData, players: newPlayers });
   };
 
-  public updateOption = ({ gameData: gameDataJSON, name, value }: { gameData: string; name: string; value: string }): string => {
+  public updateOption = ({
+    gameData: gameDataJSON,
+    name,
+    value,
+  }: {
+    gameData: string;
+    name: string;
+    value: string;
+  }): string => {
     const gameData: IBaseGameData = JSON.parse(gameDataJSON);
 
     const { options } = gameData;
